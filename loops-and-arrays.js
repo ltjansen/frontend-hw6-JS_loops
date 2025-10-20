@@ -13,6 +13,9 @@
 
 const meetingTimes = ['09:00', '10:30', '14:00', '15:30', '17:00'];
 
+for (const element of meetingTimes) {
+    console.log(`Vergadering om ${element}`);
+}
 
 // ==========================================
 // Opdracht 2. In tegenstelling tot Bob, werken de andere medewerkers van Loop-it Solutions wél hard.
@@ -27,6 +30,11 @@ const meetingTimes = ['09:00', '10:30', '14:00', '15:30', '17:00'];
 
 const salaries = [3200, 2350, 2800, 3500, 2800];
 
+salaries.forEach((element, index, array) => {
+        array[index] *= 1.05;
+    })
+
+console.log(salaries);
 
 // ==========================================
 // Opdracht 3. Eén van Bob's taken is medewerkers feliciteren met hun "zoveelste" verjaardag.
@@ -39,6 +47,11 @@ const salaries = [3200, 2350, 2800, 3500, 2800];
 
 const birthYears = [1995, 1997, 1990, 2003, 1982];
 
+birthYears.forEach((element, index, array) => {
+    array[index] = (2025 - element);
+})
+
+console.log(birthYears);
 
 // ==========================================
 // Opdracht 4. Bob houdt bij hoeveel verlofuren medewerkers per maand opnemen. Nu wil hij voor het nieuwe jaar een bonusstructuur toepassen:
@@ -52,6 +65,15 @@ const birthYears = [1995, 1997, 1990, 2003, 1982];
 
 const leaveHours = [6, 9, 2, 7, 3];
 
+leaveHours.forEach((element, index, array) => {
+    if (element % 2 === 0) {
+        array[index] = element * 2;
+    } else {
+        array[index] = element * 0.5;
+    }
+})
+
+console.log(leaveHours);
 
 // ==========================================
 // Opdracht 5 (BONUS). Na een dag bij Loop-it Solutions zit je er lekker in, tot je beseft dat één van de machines de
@@ -69,4 +91,8 @@ const leaveHours = [6, 9, 2, 7, 3];
 
 const productionCodes = [" abC123  ", "  DEF456", "ghi789  ", "JKL012"];
 
+productionCodes.forEach((element, index, array) => {
+    array[index] = element.trim().toUpperCase();
+})
 
+console.log(productionCodes);
